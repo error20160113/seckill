@@ -4,8 +4,7 @@ import java.util.Date;
 
 public class SuccessKilled {
 
-	
-    private long seckillId;
+	private long seckillId;
     private long userPhone;
     private short state;
     private Date createTime;
@@ -54,12 +53,11 @@ public class SuccessKilled {
     }
 
     @Override
-    public String toString() {
-        return "SuccessKilled{" +
-                "seckillId=" + seckillId +
-                ", userPhone=" + userPhone +
-                ", state=" + state +
-                ", createTime=" + createTime +
-                '}';
-    }
+	public String toString() {
+		return "SuccessKilled [seckillId=" + seckillId + ", userPhone="
+				+ userPhone + ", state=" + state + ", createTime=" + createTime
+				+ ", seckill=" + seckill + "]";
+	}
+
+    
 }

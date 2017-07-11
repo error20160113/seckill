@@ -6,8 +6,8 @@
 
 	<!--当出现主键冲突时(即重复秒杀时)，会报错;不想让程序报错，加入ignore-->
 	<insert id="insertSuccessKilled">
-		insert ignore into success_killed(seckill_id,user_phone)
-		values (#{seckill_id},#{user_phone})
+		insert ignore into success_killed(seckill_id,user_phone,state)
+		values (#{seckillId},#{userPhone},0)
 	</insert>
 	
 	<select id="queryByIdWithSeckill" resultType="SuccessKilled">
