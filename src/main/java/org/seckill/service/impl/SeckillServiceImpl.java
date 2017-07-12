@@ -16,14 +16,19 @@ import org.seckill.exception.SeckillException;
 import org.seckill.service.SeckillService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
+@Service
 public class SeckillServiceImpl implements SeckillService{
 
 	private Logger logger =LoggerFactory.getLogger(this.getClass());
 	
+	@Autowired
 	private SeckillDao seckillDao;
 	
+	@Autowired
 	private SuccessKilledDao successKilledDao;
 	
 	//md5盐值字符串，用于混淆加密
