@@ -1,3 +1,5 @@
 eclipse.preferences.version=1
 encoding//src/main/sql/schema.sql=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/common/head.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/common/tag.jsp=UTF-8
 encoding/README.md=UTF-8

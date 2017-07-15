@@ -8,7 +8,7 @@
 
 	<!-- 配置DispatcherServlet -->
 	<servlet>
-		<servlet-name>seclikk-dispatcher</servlet-name>
+		<servlet-name>seckill-dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<!-- 配置springMVC需要加载的文件
 			spring-dao.xml，spring-service.xml,spring-web.xml

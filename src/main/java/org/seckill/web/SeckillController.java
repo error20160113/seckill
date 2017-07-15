@@ -59,7 +59,7 @@ public class SeckillController {
 		}
 		model.addAttribute("seckill",seckill);
 				
-		return "detil";
+		return "detail";
 	}
 	
 	//
