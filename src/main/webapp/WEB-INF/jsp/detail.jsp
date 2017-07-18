@@ -68,14 +68,16 @@
 <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<script src="resources/script/seckill.js" type="text/javascript"></script>
+<%--jQuery Cookie操作插件--%>
+<script src="http://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery.countdown/2.1.0/jquery.countdown.min.js"></script>
+<script src="/seckill/resources/script/seckill.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 	$(function(){
 		//使用el表达式传入参数
 		seckill.detail.init({
-			seckillID:${seckill.id},
+			seckillId:${seckill.seckillId},
 			startTime:${seckill.startTime.time},
 			endTime:${seckill.endTime.time}
 		});
