@@ -4,6 +4,14 @@
 * [Java高并发秒杀API之web层](http://www.imooc.com/learn/630)   
 * [Java高并发秒杀API之高并发优化](http://www.imooc.com/learn/632)   
 
+  
+高并发优化  
+
+* 前端控制：暴露接口，按钮防重复  
+* 动静态数据分离：CDN缓存，后端缓存
+* 事物竞争优化：减少事物锁时间
+
+
 
 Restful风格  
 GET->查询操作  

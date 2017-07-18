@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.seckill.dao.SeckillDao;
 import org.seckill.dao.SuccessKilledDao;
+import org.seckill.dao.cache.RedisDao;
 import org.seckill.dto.Exposer;
 import org.seckill.dto.SeckillExecution;
 import org.seckill.entity.Seckill;
@@ -25,6 +26,9 @@ import org.springframework.util.DigestUtils;
 public class SeckillServiceImpl implements SeckillService{
 
 	private Logger logger =LoggerFactory.getLogger(this.getClass());
+	
+	@Autowired
+	private  RedisDao redisDao;
 	
 	@Autowired
 	private SeckillDao seckillDao;
@@ -50,11 +54,21 @@ public class SeckillServiceImpl implements SeckillService{
 
 	@Override
 	public Exposer exportSeckillUrl(long seckillId) {
-		
-		Seckill seckill= seckillDao.queryById(seckillId);
+		//优化点 缓存优化
+		//1.访问redis
+		Seckill seckill=redisDao.getSeckill(seckillId);
 		if(seckill==null){
-			return new Exposer(false, seckillId);
+			//2.访问数据库
+			seckill= seckillDao.queryById(seckillId);
+			if(seckill==null){
+				return new Exposer(false, seckillId);
+			}else{//3.放入ridis
+				redisDao.putSeckill(seckill);
+			}
 		}
+		
+		//Seckill seckill= seckillDao.queryById(seckillId);
+		
 		
 		Date startTime = seckill.getStartTime();
 		Date endTime = seckill.getEndTime();
