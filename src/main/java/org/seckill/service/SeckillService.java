@@ -50,4 +50,18 @@ public interface SeckillService {
 	 */
 	SeckillExecution executeSeckill(long seckillId,long userPhone,String md5)
 			throws SeckillException,RepeatKillException,SeckillCloseException;
+	
+	
+	/**
+	 * 执行秒杀 调用存过
+	 * 事物控制放在MySQL中
+	 * @param seckillId
+	 * @param userPhone
+	 * @param md5
+	 * @return
+	 * @throws SeckillException
+	 * @throws RepeatKillException
+	 * @throws SeckillCloseException
+	 */
+	SeckillExecution executeSeckillProcedure(long seckillId,long userPhone,String md5);
 }

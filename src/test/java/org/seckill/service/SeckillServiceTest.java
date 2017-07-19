@@ -39,18 +39,26 @@ public class SeckillServiceTest {
 
 	@Test
 	public void testExportSeckillUrl() {
-		long id =1000;
+		long id =1003;
 		Exposer exposer = seckillService.exportSeckillUrl(id);
 		logger.info("exposer={}",exposer);
 	}
 
 	@Test
 	public void testExecuteSeckill() {
-		long id =1000;
+		long id =1003;
 		long userPhone=13227711883l;
-		String md5="fa2e3ea86f0c8192d6fe0cb270f19059";
+		String md5="1c921046f7ff633a1f9172776496fdd2";
 		SeckillExecution execution=seckillService.executeSeckill(id, userPhone, md5);
 		logger.info("SeckillExecution={}",execution);
 	}
 
+	@Test
+	public void executeSeckillProcedure(){
+		long seckillId =1003;
+		long userPhone=88888888888l;
+		String md5="1c921046f7ff633a1f9172776496fdd2";
+		SeckillExecution execution=seckillService.executeSeckillProcedure(seckillId, userPhone, md5);
+		System.out.println(execution);
+	}
 }
